@@ -15,11 +15,27 @@ contract FunctionsModifier{
 
     }
 
-    function inc() public whenNotPaused {   // we added "whenNotPaused" modifier in this function which will let the function work only when the contract is not paused.
-        count++;        // This will only increment when the contract is not paused.
+    modifier checkInput(uint256 _a) {
+        require(_a > 100, "a <= 100");
+        _;
     }
 
-    function dec() public whenNotPaused {
-        count--;
+    function inc(uint256 _a) public whenNotPaused checkInput(_a) {   // we added "whenNotPaused" modifier in this function which will let the function work only when the contract is not paused.
+        count += _a;        // This will only increment when the contract is not paused.
     }
+
+    function dec(uint256 _a) public whenNotPaused checkInput(_a){
+        count -= _a;
+    }
+
+    modifier poo() {
+        count += 100;
+        _;
+        count *= 2;
+    }
+
+    function foo() public poo{
+        count += 1;
+    }
+    
 }
