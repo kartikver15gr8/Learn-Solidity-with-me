@@ -49,7 +49,7 @@ contract Mappings{
 // Another example
 
 
-contract Mappings {
+contract Mappings2 {
     // Mappings are just like dictionary in python.
     mapping(string => uint256) public luckyNum;
 
