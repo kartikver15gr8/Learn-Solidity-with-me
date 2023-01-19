@@ -44,3 +44,29 @@ contract Mappings{
 
 
 }
+
+
+// Another example
+
+
+contract Mappings {
+    // Mappings are just like dictionary in python.
+    mapping(string => uint256) public luckyNum;
+
+    struct Luck{
+        string name;
+        uint256 num;
+    }
+    
+    Luck[] public arr;
+
+    function addKeyPairs(string memory _name, uint256 _num) public {
+        arr.push(Luck(_name, _num));
+    }
+
+    function getArray() public view returns(Luck[] memory){
+        return arr;
+    }
+
+    
+}
