@@ -22,13 +22,16 @@ contract Structs {
 
         computers.push(Computer("Nvidea RTX 4079", 64, "intel i9"));
     }
-
+    
     function addPCs(string memory _gpu, uint256 _ram, string memory _processor) public {
         myComputers.push(Computer(_gpu, _ram, _processor));
     }
-
-    function getPCsFromArr(uint256 _index) public view returns(Computer memory){
-        return myComputers[_index];
+    
+    function getComputer() public view returns(Computer[] memory){
+        return computers;
     }
 
+    function getMyComputers() public view returns(Computer[] memory){
+        return myComputers;
+    }
 }
