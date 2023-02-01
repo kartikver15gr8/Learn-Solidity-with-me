@@ -31,8 +31,6 @@ contract Beta is Alpha {
     }
 }
 
-// Multiple inheritance 
-
 contract Gamma is Beta {
     function alphaMajor() public pure override returns(string memory) {
         return "Gamma Rays turned Banner into Hulk!";
