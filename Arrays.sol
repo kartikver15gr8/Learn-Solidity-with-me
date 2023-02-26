@@ -1,4 +1,3 @@
-``` Solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
@@ -43,4 +42,3 @@ contract Arrays {
         return numDynamic;  // This will return the whole array
     }
 }
-```
